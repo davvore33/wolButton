@@ -12,8 +12,8 @@ app = Flask(__name__)
 @app.route("/", methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
-        if request.form.get('wol') == 'WOL':
-            os.system('etherwake {}'.format(configuration['CONSTANTS']['hwaddr']))
+        if request.form.get('now') == 'NOW':
+            os.system('sudo etherwake {}'.format(configuration['CONSTANTS']['hwaddr']))
         else:
             pass  # unknown
     elif request.method == 'GET':
